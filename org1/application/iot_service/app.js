@@ -8,11 +8,11 @@ const Asset = require('../../contract/lib/asset');
 var Client = require("ibmiotf");
 
 var appClientConfig = {
-  org: '',
-  id: 'tracking',
+  org: 'zs795o',
+  id: 'A-001',
   "domain": "internetofthings.ibmcloud.com",
-  "auth-key": '',
-  "auth-token": ''
+  "auth-key": 'a-zs795o-diatnqc3vk',
+  "auth-token": '7Mce8cHx90efPS)_pJ'
 };
 
 const appClient = new Client.IotfApplication(appClientConfig);
@@ -78,12 +78,30 @@ try {
 
       let data = JSON.parse(payload.toString('utf8'));
     
-      contract.submitTransaction('updateAssetLocation', data.d.assetKey, data.d.assetLocation)
+      if (data.d.xyz === 'manufactureAsset'){  
+      contract.submitTransaction('manufactureAsset', data.d.assetKey, data.d.assetId,data.d.assetType)
         .then((response) => {
 
           let asset = Asset.fromBuffer(response);
           console.log(asset);
         });
+      }
+      else if(data.d.xyz === 'vendorAsset'){
+        contract.submitTransaction('updateAssetLocation', data.d.assetKey, data.d.assetLocation)
+        .then((response) => {
+
+          let asset = Asset.fromBuffer(response);
+          console.log(asset);
+        });  
+      }
+      else if(data.d.xyz === 'contractorAsset'){
+        contract.submitTransaction('updateAssetLocation', data.d.assetKey, data.d.assetLocation)
+        .then((response) => {
+
+          let asset = Asset.fromBuffer(response);
+          console.log(asset);
+        });  
+      }
     
     });
     

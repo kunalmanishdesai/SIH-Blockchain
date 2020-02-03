@@ -66,10 +66,10 @@ async function main() {
     * 
     */
 
+   const transferResponse = await contract.submitTransaction('transferAsset',"manufacturer1","A-005","manufacturer1","vendor1");
+   let asset = Asset.fromBuffer(transferResponse);
 
-
-    
-  // End of Trnsaction Invocation section
+   console.log(asset);
 
   } catch (error) {
 

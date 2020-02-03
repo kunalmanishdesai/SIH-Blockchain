@@ -126,7 +126,6 @@ class AssetContract extends Contract {
      * @param {String} newOwner new owner of asset
     */
     async transferAsset(ctx, manufacturer, assetNumber, currentOwner, newOwner) {
-
         // Retrieve the current asset using key fields provided
         let assetKey = Asset.makeKey([manufacturer, assetNumber]);
 
@@ -370,7 +369,7 @@ class AssetContract extends Contract {
      * @param {String} assetNumber asset number for this asset
     */
    async destroyAsset(ctx, manufacturer, assetNumber) {
-
+        //console.log("Bhadwa");
         // Retrieve the current asset using key fields provided
         let assetKey = Asset.makeKey([manufacturer, assetNumber]);
 
