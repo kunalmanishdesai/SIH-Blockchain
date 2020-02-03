@@ -1,16 +1,10 @@
-# jute asset Tracking with Blockchain and IoT
+# Jute asset Tracking
 
-In this pattern, we will be creating a local Hyperledger Fabric network using the IBM Blockchain Platform extension for VSCode which makes it easy to start developing smart contracts. 
+A local Hyperledger Fabric network using the IBM Blockchain Platform extension for VSCode.
 
-The solution that we will be creating is a jute asset lifecycle and tracking solution that keeps a record of the jute asset from creation to deletion. Also, we will be creating and managing jute asset leases which keep track of the lease terms in a lease agreement such as end date, price, and deposit amount. 
+The solution that is a jute asset lifecycle and tracking solution that keeps a record of the jute asset from creation to deletion. Also, we will be creating and managing jute asset inspection contracts which keep track of the contract terms in a contract agreement such as end date, price, and deposit amount. 
 
-For the IoT integration, we will be leveraging the IBM Watson IoT Platform to handle device scanning at various locations as the jute asset is being transferred. Instead of having an actual physical device, we will be creating a web app pretending to be a device which will trigger these scans and notify a locally node.js app to invoke the updatejute assetLocation transaction.
-
-After completing this pattern you will understand how to:
-- Deploy smart contracts to a local Hyperledger Fabric network
-- Create a simulated IoT device using the IBM Watson IoT Platform and Node-Red
-- Connect to a Hyperledger Fabric application using the Fabric SDK for Node.js
-- Publish IoT events to the ledger on a device event such as a scan
+For the IoT integration, we have leverage the IBM Watson IoT Platform to handle device scanning at various locations as the jute asset is being transferred. Instead of having an actual physical device, we have created a web app pretending to be a device which will trigger these scans and notify a locally node.js app to invoke the updatejute assetLocation transaction.
 
 # Flow
 1. The smart contract is deployed to a local Hyperledger Fabric network via the IBM Blockchain Platform extension for VS Code.
